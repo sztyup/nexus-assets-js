@@ -1,0 +1,23 @@
+{
+  "name": "nexus-assets-js",
+  "version": "1.0.0",
+  "description": "Nexus asset management JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    ""
+  },
+  "dependencies": {
+    "laravel-mix": "^1.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/sztyup/nexus-assets-js.git"
+  },
+  "author": "Csupity László <sztyup@gmail.com> (sztyup.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sztyup/nexus-assets-js/issues"
+  },
+  "homepage": "https://github.com/sztyup/nexus-assets-js#readme"
+}
