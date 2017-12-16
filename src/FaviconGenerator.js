@@ -33,8 +33,7 @@ class FaviconGenerator {
             response.files.forEach(writer.bind(this));
         };
 
-        let site = this.sites.get('golyabal');
-        // sites.forEach(function(site) {
+        sites.forEach(function(site) {
             // Generate favicons
             console.info("Generating for: " + site.slug);
 
@@ -47,7 +46,7 @@ class FaviconGenerator {
             configuration.appName = site.name;
 
             favicons(source, configuration, callback.bind(site));
-        // }, this);
+        }, this);
     }
 }
 
