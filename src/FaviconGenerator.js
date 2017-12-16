@@ -2,7 +2,7 @@ const favicons = require('favicons');
 const fs = require('fs');
 
 class FaviconGenerator {
-    constructor(config) {
+    constructor() {
         this.sites = require('./Sites');
         this.config = require('./favicon.conf.json');
     }

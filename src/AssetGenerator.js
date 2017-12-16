@@ -2,8 +2,7 @@ let webpack = require("webpack");
 const resolve = require("resolve");
 
 class AssetGenerator {
-    constructor(config) {
-        this.config = config;
+    constructor() {
     }
 
     run(sites) {

@@ -35,5 +35,5 @@ if(argv.assets) {
 
 pipeline.forEach(function(command) {
     let generator = require('../src/' + command);
-    new generator(require('../src/Config').getConfig()).run(sites);
+    new generator().run(sites);
 });
