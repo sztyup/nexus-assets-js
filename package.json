@@ -2,13 +2,16 @@
   "name": "nexus-assets-js",
   "version": "1.0.0",
   "description": "Nexus asset management JS",
-  "main": "index.js",
+  "main": "src/generator.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    ""
+    "nexus": "bin/nexus.js"
   },
   "dependencies": {
-    "laravel-mix": "^1.7.2"
+    "favicons": "^4.8.6",
+    "get-root-path": "^2.0.2",
+    "laravel-mix": "^1.7.2",
+    "yargs": "^10.0.3"
   },
   "repository": {
     "type": "git",
