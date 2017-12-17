@@ -17,7 +17,9 @@ if(argv._.length === 0) {
 }
 
 if(argv._.length === 1) {
-    sites = [argv._.pop()];
+    sites = [
+        require('../src/Sites').get( argv._.pop() )
+    ];
 }
 
 if(argv._.length > 1) {
