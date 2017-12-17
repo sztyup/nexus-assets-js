@@ -1,5 +1,4 @@
 let webpack = require("webpack");
-const resolve = require("resolve");
 
 class AssetGenerator {
     constructor() {
@@ -12,8 +11,7 @@ class AssetGenerator {
             .options({
                 processCssUrls: false
             })
-            .setPublicPath(global.rootPath('.'))
-            .setResourceRoot(global.rootPath('storage/assets'))
+            .setPublicPath('storage/assets')
             .disableNotifications()
         ;
 
@@ -29,7 +27,7 @@ class AssetGenerator {
             // Generate css files from sass
             api.sass(
                 global.rootPath('resources/sites/' + site.slug + '/' + 'app.scss'),
-                'storage/assets/' + site.slug + '/css/app.css'
+                site.slug + '/css/app.css'
             ).version();
 
             // Compile JS files
@@ -38,7 +36,7 @@ class AssetGenerator {
                     global.rootPath('resources/sites/' + site.slug + '/' + 'app.js'),
                     global.rootPath('resources/sites/global.js')
                 ],
-                'storage/assets/' + site.slug + '/js/app.js'
+                site.slug + '/js/app.js'
             ).version();
         });
     }
