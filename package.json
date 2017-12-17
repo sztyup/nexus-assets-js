@@ -1,6 +1,6 @@
 {
   "name": "nexus-assets-js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Nexus asset management JS",
   "main": "src/generator.js",
   "scripts": {
