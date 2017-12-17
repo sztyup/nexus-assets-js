@@ -13,6 +13,7 @@ class AssetGenerator {
                 processCssUrls: false
             })
             .setPublicPath(global.rootPath('storage/assets/'))
+            .setResourceRoot(global.rootPath('storage/assets'))
             .disableNotifications()
         ;
 
@@ -43,17 +44,17 @@ class AssetGenerator {
     }
 
     runWebpack(config) {
-        let ProgressPlugin = require('webpack/lib/ProgressPlugin');
-
         let compiler = webpack(config);
 
-        compiler.apply(new ProgressPlugin((percentage, msg) => {
-            console.log((percentage * 100) + '%', msg);
-        }));
+        compiler.apply(new webpack.ProgressPlugin());
 
         compiler.run((err, stats) => {
             if (err) return reject(err);
-            resolve(stats);
+            console.log(stats.toString({
+                chunks: false,
+                colors: true,
+                children: false
+            }));
         })
     }
 }
