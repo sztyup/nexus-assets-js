@@ -1,5 +1,5 @@
 const favicons = require('favicons');
-const fs = require('fs');
+const fs = require('fs-extra');
 
 class FaviconGenerator {
     constructor() {
@@ -26,7 +26,7 @@ class FaviconGenerator {
                     console.log('written: ' + global.rootPath('storage/assets/' + this.slug + '/img/favicons/' + file.name));
                 };
 
-                fs.writeFile(global.rootPath('storage/assets/' + this.slug + '/img/favicons/' + file.name), file.contents, errorHandler.bind(this));
+                fs.outputFile(global.rootPath('storage/assets/' + this.slug + '/img/favicons/' + file.name), file.contents, errorHandler.bind(this));
             };
 
             response.images.forEach(writer.bind(this));
