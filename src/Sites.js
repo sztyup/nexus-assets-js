@@ -13,7 +13,10 @@ class Sites {
         sites.forEach(function(site) {
             this.sites.set(site.slug, {
                 slug: site.slug,
-                name: site.name
+                name: site.name,
+                hasFontsFile: fs.existsSync(
+                    global.rootPath('resources/sites/' + site.slug + '/fonts.json')
+                )
             });
         }, this);
     }

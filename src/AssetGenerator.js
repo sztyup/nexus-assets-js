@@ -26,18 +26,25 @@ class AssetGenerator {
         sites.forEach(function(site) {
             // Generate css files from sass
             api.sass(
-                global.rootPath('resources/sites/' + site.slug + '/' + 'app.scss'),
+                global.rootPath('resources/sites/' + site.slug + '/app.scss'),
                 site.slug + '/css/app.css'
             ).version();
 
             // Compile JS files
-            api.js(
-                [
-                    global.rootPath('resources/sites/' + site.slug + '/' + 'app.js'),
+            api.js([
+                    global.rootPath('resources/sites/' + site.slug + '/app.js'),
                     global.rootPath('resources/sites/global.js')
                 ],
                 site.slug + '/js/app.js'
             ).version();
+
+            if (site.hasFontsFile) {
+                let fonts = require(global.rootPath('resources/sites/' + site.slug + '/fonts.json'));
+
+                fonts.forEach(function (font) {
+                    api.copyDirectory('node_modules/' + font, 'storage/assets/' + site.slug + '/fonts/');
+                });
+            }
         });
     }
 
