@@ -53,7 +53,7 @@ class AssetGenerator {
 
         compiler.apply(new webpack.ProgressPlugin());
 
-        compiler.run((err, stats) => {
+        let compilerCallback = (err, stats) => {
             if (err) return reject(err);
             console.log(stats.toString({
                 chunks: false,
@@ -61,7 +61,13 @@ class AssetGenerator {
                 children: false,
                 modules: false
             }));
-        })
+        };
+
+        if (global.watch) {
+            compiler.watch({}, compilerCallback);
+        } else {
+            compiler.run(compilerCallback);
+        }
     }
 }
 

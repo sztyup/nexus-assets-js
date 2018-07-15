@@ -34,6 +34,11 @@ if(argv.favicons) {
 if(argv.assets) {
     pipeline.push("AssetGenerator");
 }
+if(argv.watch) {
+    global.watch = true;
+} else {
+    global.watch = false;
+}
 
 pipeline.forEach(function(command) {
     let generator = require('../src/' + command);
