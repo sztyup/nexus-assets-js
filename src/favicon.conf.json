@@ -5,7 +5,7 @@
     "developerURL": "https://sztyup.com",
     "background": "#fff",
     "theme_color": "#fff",
-    "path": "/",
+    "path": "/img/favicons/",
     "display": "standalone",
     "orientation": "portrait",
     "start_url": "/?homescreen=1",
