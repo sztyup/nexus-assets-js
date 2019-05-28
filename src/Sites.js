@@ -6,7 +6,7 @@ class Sites {
     }
 
     loadSites() {
-        let file = fs.readFileSync(global.rootPath('/storage/sites.json'));
+        let file = fs.readFileSync(global.rootPath('/storage/app/sites.json'));
         let sites = JSON.parse(file).sites;
         this.sites = new Map();
 
